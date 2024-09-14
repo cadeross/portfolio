@@ -13,40 +13,71 @@
     <h1>Cade Ross</h1>
     <p id="blurb">I design, build, and market digital experiences with joy. I have been blessed to partner with wonderful companies to design delightful digital experiences. Some are shown below.</p>
     
-    <div class="projects">
-        <a href="/solana.html" class="project gradient-border project-link" data-color="gradient">
-            <img src="/images/icons/solana.svg" class="default-svg" alt="Project 1">
-            <img src="/images/icons/solana-color.svg" class="hover-svg" alt="Project 1 Hover">
-        </a>
-        <a href="/baylor.html" class="project project-link" data-color="#F4BB47">
-            <img src="/images/icons/bu.svg" class="default-svg" alt="Project 1">
-            <img src="/images/icons/bu-color.svg" class="hover-svg" alt="Project 1 Hover">
-        </a>
-        <a href="/scratchpad.html" class="project project-link" data-color="#e3ddd1">
-            <img src="/images/icons/dwell.svg" class="default-svg" alt="Project 1">
-            <img src="/images/icons/dwell-color.svg" class="hover-svg" alt="Project 1 Hover">
-        </a>
-        <a href="/brev.html" class="project project-link" data-color="#4EACB6">
-            <img src="/images/icons/brev.svg" class="default-svg" alt="Brev.dev Partnership">
-            <img src="/images/icons/brev-color.svg" class="hover-svg" alt="Project 1 Hover">
-            <span class="hover-text">Acquired by NVIDIA</span>
-        </a>
-        <!-- <a href="/experience/audible.html" class="project project-link" data-color="#F2A43A">
-            <img src="/images/icons/audible.svg" class="default-svg" alt="Project 1">
-            <img src="/images/icons/audible-color.svg" class="hover-svg" alt="Project 1 Hover">
-        </a> -->
-        <a href="/clarity.html" class="project project-link" data-color="#8998DC">
-            <img src="/images/icons/clarity.svg" class="default-svg" alt="Project 1">
-            <img src="/images/icons/clarity-color.svg" class="hover-svg" alt="Project 1 Hover">
-        </a>
-        <a href="/zircon.html" class="project project-link" data-color="#68176a">
-            <img src="/images/icons/zircon.svg" class="default-svg" alt="Project 1">
-            <img src="/images/icons/zircon-color.svg" class="hover-svg" alt="Project 1 Hover">
-        </a>
+
+    <nav class="nav-panel">
+        <ul>
+            <li><a href="#work" class="nav-item" data-index="0">Work</a></li>
+            <li><a href="#album-art" class="nav-item" data-index="1">Album Art</a></li>
+            <li><a href="#writing" class="nav-item" data-index="2">Writing</a></li>
+            <li><a href="#about-me" class="nav-item" data-index="3">About Me</a></li>
+        </ul>
+        <div class="selected"></div>
+    </nav>
+
+    <div id="work" class="content-section active">
+        <!-- <h2>Work Content</h2> -->
+        <div class="projects">
+            <a href="/solana.html" class="project gradient-border project-link" data-color="gradient">
+                <img src="/images/icons/solana.svg" class="default-svg" alt="Project 1">
+                <img src="/images/icons/solana-color.svg" class="hover-svg" alt="Project 1 Hover">
+            </a>
+            <a href="/baylor.html" class="project project-link" data-color="#F4BB47">
+                <img src="/images/icons/bu.svg" class="default-svg" alt="Project 1">
+                <img src="/images/icons/bu-color.svg" class="hover-svg" alt="Project 1 Hover">
+            </a>
+            <a href="/scratchpad.html" class="project project-link" data-color="#e3ddd1">
+                <img src="/images/icons/dwell.svg" class="default-svg" alt="Project 1">
+                <img src="/images/icons/dwell-color.svg" class="hover-svg" alt="Project 1 Hover">
+            </a>
+            <a href="/brev.html" class="project project-link" data-color="#4EACB6">
+                <img src="/images/icons/brev.svg" class="default-svg" alt="Brev.dev Partnership">
+                <img src="/images/icons/brev-color.svg" class="hover-svg" alt="Project 1 Hover">
+                <span class="hover-text">Acquired by NVIDIA</span>
+            </a>
+            <!-- <a href="/experience/audible.html" class="project project-link" data-color="#F2A43A">
+                <img src="/images/icons/audible.svg" class="default-svg" alt="Project 1">
+                <img src="/images/icons/audible-color.svg" class="hover-svg" alt="Project 1 Hover">
+            </a> -->
+            <a href="/clarity.html" class="project project-link" data-color="#8998DC">
+                <img src="/images/icons/clarity.svg" class="default-svg" alt="Project 1">
+                <img src="/images/icons/clarity-color.svg" class="hover-svg" alt="Project 1 Hover">
+            </a>
+            <a href="/zircon.html" class="project project-link" data-color="#68176a">
+                <img src="/images/icons/zircon.svg" class="default-svg" alt="Project 1">
+                <img src="/images/icons/zircon-color.svg" class="hover-svg" alt="Project 1 Hover">
+            </a>
+        </div>
     </div>
+
+    <div id="album-art" class="content-section">
+        <h2>Album Art Content</h2>
+        <!-- Add your album art content here -->
+    </div>
+
+    <div id="writing" class="content-section">
+        <h2>Writing Content</h2>
+        <!-- Add your writing content here -->
+    </div>
+
+    <div id="about-me" class="content-section">
+        <h2>About Me Content</h2>
+        <!-- Add your about me content here -->
+    </div>
+
+    <p class="footer">Crafted with <i>love</i> in the United States</p>
+    <p class="footer">Vanilla CSS + HTML + JS</p>
     
     <div class="links">
-        <a href="about.html">About me</a>
         <div class="contact">
             <a href="https://x.com/cadeccr" class="icon">
                 <img src="/images/icons/X.svg" alt="Close">
@@ -55,7 +86,6 @@
                 <img src="/images/icons/Mail.svg" alt="Email">
             </a>
         </div>
-        <a href="album-art.html">Album art</a>
     </div>
     <script>
         document.querySelectorAll('.project').forEach(project => {
@@ -75,6 +105,35 @@
                 }
             });
         });
+        const navItems = document.querySelectorAll('.nav-item');
+        const selected = document.querySelector('.selected');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        function updateSelected(item) {
+            const rect = item.getBoundingClientRect();
+            const navRect = document.querySelector('.nav-panel').getBoundingClientRect();
+            selected.style.left = `${rect.left - navRect.left}px`;
+            selected.style.width = `${rect.width}px`;
+        }
+
+        function showContent(id) {
+            contentSections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelector(id).classList.add('active');
+        }
+
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                updateSelected(item);
+                showContent(item.getAttribute('href'));
+            });
+        });
+
+        // Initialize the selected line and content
+        updateSelected(navItems[0]);
+        showContent('#work');
     </script>
 </body>
 </html>

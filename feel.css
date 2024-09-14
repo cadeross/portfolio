@@ -7,7 +7,7 @@ body {
     max-width: 544px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center;
+    text-align: start;
     color: #000000;
     font-family: Baskervville;
     font-size: 16px;
@@ -18,9 +18,9 @@ body {
 }
 h1 {
     margin-top: 88px;
-    margin-bottom: 44px;
+    margin-bottom: 20px;
     color: #000;
-    text-align: center;
+    text-align: start;
     font-family: Baskervville;
     font-size: 36px;
     font-style: normal;
@@ -28,20 +28,38 @@ h1 {
     line-height: normal;
 }
 
+.project-title {
+    margin-bottom: 12px;
+}
+
+.text {
+    margin-bottom: 12px;
+}
+
 #blurb {
     color: #000;
-    text-align: center;
+    text-align: start;
     font-family: Baskervville;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    max-width: 468px;
-    margin: 0 auto 68px auto;
+    /* max-width: 468px; */
+    margin: 0 auto 18px auto;
 }
 p {
     margin: 0 auto;
     text-align: center;
+}
+
+.project-info {
+    color: #00000050;
+    text-align: center;
+    /* font-family: "Inter", sans-serif; */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
 }
 
 .section {
@@ -54,6 +72,13 @@ p {
     text-align: start;
     padding-top: 16px;
     /* padding-bottom: 20px; */
+
+    /* font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal; */
+
 }
 
 .section img {
@@ -279,6 +304,10 @@ margin: 30px 0;
     }
 }
 
+.projects {
+    margin-top: 34px;
+}
+
 .hover-text {
     display: none;
     position: absolute;
@@ -294,4 +323,52 @@ margin: 30px 0;
 
 .project:hover .hover-text {
     display: block;
+}
+
+
+
+.nav-panel {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.32);
+    position: relative;
+}
+.nav-panel ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+.nav-panel li {
+    padding: 10px 0;
+}
+.nav-panel a {
+    text-decoration: none;
+    color: #000;
+    transition: opacity 0.3s ease;
+    display: inline-block;
+    padding: 5px 0;
+}
+.nav-panel a:hover {
+    opacity: 0.32;
+}
+.nav-panel .selected {
+    position: absolute;
+    bottom: -1px;
+    height: 1px;
+    background-color: #000;
+    transition: left 0.3s ease, width 0.3s ease;
+}
+.content-section {
+    display: none;
+}
+.content-section.active {
+    display: block;
+}
+
+
+.footer {
+    font-size: 16px;
+    color: #00000032;
+    margin-top: 64px;
 }
