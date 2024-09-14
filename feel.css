@@ -67,7 +67,6 @@ p {
 }
 
 .section p {
-    max-width: 524px;
     margin: 0 auto;
     text-align: start;
     padding-top: 16px;
@@ -325,8 +324,6 @@ margin: 30px 0;
     display: block;
 }
 
-
-
 .nav-panel {
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.32);
@@ -338,9 +335,11 @@ margin: 30px 0;
     margin: 0;
     display: flex;
     justify-content: space-around;
+    /* justify-content: flex-start; */
 }
 .nav-panel li {
     padding: 10px 0;
+    /* margin-right: 20px; */
 }
 .nav-panel a {
     text-decoration: none;

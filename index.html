@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cade Ross</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -12,8 +14,6 @@
 <body>
     <h1>Cade Ross</h1>
     <p id="blurb">I design, build, and market digital experiences with joy. I have been blessed to partner with wonderful companies to design delightful digital experiences. Some are shown below.</p>
-    
-
     <nav class="nav-panel">
         <ul>
             <li><a href="#work" class="nav-item" data-index="0">Work</a></li>
@@ -23,6 +23,7 @@
         </ul>
         <div class="selected"></div>
     </nav>
+    <div class="scrollable-content"></div>
 
     <div id="work" class="content-section active">
         <!-- <h2>Work Content</h2> -->
@@ -87,7 +88,6 @@
         </div>
     </div>
 
-
     <script>
         document.querySelectorAll('.project').forEach(project => {
             const color = project.getAttribute('data-color');
@@ -136,5 +136,6 @@
         updateSelected(navItems[0]);
         showContent('#work');
     </script>
+
 </body>
 </html>
