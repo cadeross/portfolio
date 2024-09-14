@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cade Ross</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/feel.css">
+</head>
+<body>
+    <h1>Cade Ross</h1>
+    <p id="blurb">I design, build, and market digital experiences with joy. I have been blessed to partner with wonderful companies to design delightful digital experiences. Some are shown below.</p>
+    
+    <div class="projects">
+        <a href="/experience/solana.html" class="project gradient-border project-link" data-color="gradient">
+            <img src="/images/icons/solana.svg" class="default-svg" alt="Project 1">
+            <img src="/images/icons/solana-color.svg" class="hover-svg" alt="Project 1 Hover">
+        </a>
+        <a href="/experience/baylor.html" class="project project-link" data-color="#F4BB47">
+            <img src="/images/icons/bu.svg" class="default-svg" alt="Project 1">
+            <img src="/images/icons/bu-color.svg" class="hover-svg" alt="Project 1 Hover">
+        </a>
+        <a href="/experience/scratchpad.html" class="project project-link" data-color="#e3ddd1">
+            <img src="/images/icons/dwell.svg" class="default-svg" alt="Project 1">
+            <img src="/images/icons/dwell-color.svg" class="hover-svg" alt="Project 1 Hover">
+        </a>
+        <a href="/experience/brev.html" class="project project-link" data-color="#4EACB6">
+            <img src="/images/icons/brev.svg" class="default-svg" alt="Brev.dev Partnership">
+            <img src="/images/icons/brev-color.svg" class="hover-svg" alt="Project 1 Hover">
+            <span class="hover-text">Acquired by NVIDIA</span>
+        </a>
+        <!-- <a href="/experience/audible.html" class="project project-link" data-color="#F2A43A">
+            <img src="/images/icons/audible.svg" class="default-svg" alt="Project 1">
+            <img src="/images/icons/audible-color.svg" class="hover-svg" alt="Project 1 Hover">
+        </a> -->
+        <a href="/experience/clarity.html" class="project project-link" data-color="#8998DC">
+            <img src="/images/icons/clarity.svg" class="default-svg" alt="Project 1">
+            <img src="/images/icons/clarity-color.svg" class="hover-svg" alt="Project 1 Hover">
+        </a>
+        <a href="/experience/zircon.html" class="project project-link" data-color="#68176a">
+            <img src="/images/icons/zircon.svg" class="default-svg" alt="Project 1">
+            <img src="/images/icons/zircon-color.svg" class="hover-svg" alt="Project 1 Hover">
+        </a>
+    </div>
+    
+    <div class="links">
+        <a href="about.html">About me</a>
+        <div class="contact">
+            <a href="https://x.com/cadeccr" class="icon">
+                <img src="/images/icons/X.svg" alt="Close">
+            </a>
+            <a href="mailto:cade_ross@icloud.com" class="icon">
+                <img src="/images/icons/Mail.svg" alt="Email">
+            </a>
+        </div>
+        <a href="album-art.html">Album art</a>
+    </div>
+    <script>
+        document.querySelectorAll('.project').forEach(project => {
+            const color = project.getAttribute('data-color');
+            project.addEventListener('mouseenter', () => {
+                if (color === 'gradient') {
+                    // The CSS will handle the gradient
+                } else {
+                    project.style.borderColor = color;
+                }
+            });
+            project.addEventListener('mouseleave', () => {
+                if (color === 'gradient') {
+                    // The CSS will handle reverting the gradient
+                } else {
+                    project.style.borderColor = '#000';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

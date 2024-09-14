@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Album Art by Cade Ross</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles.css">
+        <style>
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 20px;
+            }
+            .gallery-item {
+                cursor: pointer;
+            }
+            .gallery-item img {
+                width: 100%;
+                height: auto;
+            }
+            @media (max-width: 768px) {
+                .gallery {
+                    grid-template-columns: 1fr;
+                }
+            }
+            .lightbox {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+            .lightbox-content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-width: 90%;
+                max-height: 90%;
+            }
+            .lightbox-content img {
+                width: 100%;
+                height: auto;
+            }
+            .close {
+                color: white;
+                position: absolute;
+                top: 10px;
+                right: 25px;
+                font-size: 35px;
+                cursor: pointer;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div class="header">
+            <h1><a href="/index.html">Cade Ross</a></h1>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="/images/art1.png" alt="Image 1">
+                <h1>Image 1 Title</h1>
+                <h2>Image 1 Subtitle</h2>
+            </div>
+            <div class="gallery-item">
+                <img src="/api/placeholder/400/300" alt="Image 2">
+                <h1>Image 2 Title</h1>
+                <h2>Image 2 Subtitle</h2>
+            </div>
+            <div class="gallery-item">
+                <img src="/api/placeholder/400/300" alt="Image 3">
+                <h1>Image 3 Title</h1>
+                <h2>Image 3 Subtitle</h2>
+            </div>
+            <div class="gallery-item">
+                <img src="/api/placeholder/400/300" alt="Image 4">
+                <h1>Image 4 Title</h1>
+                <h2>Image 4 Subtitle</h2>
+            </div>
+        </div>
+    
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <div class="lightbox-content">
+                <img id="lightbox-img" src="" alt="Lightbox Image">
+            </div>
+        </div>
+    
+        <script>
+            const gallery = document.querySelector('.gallery');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const close = document.querySelector('.close');
+    
+            gallery.addEventListener('click', (e) => {
+                if (e.target.tagName === 'IMG') {
+                    lightbox.style.display = 'block';
+                    lightboxImg.src = e.target.src;
+                }
+            });
+    
+            close.addEventListener('click', () => {
+                lightbox.style.display = 'none';
+            });
+    
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.style.display = 'none';
+                }
+            });
+        </script>
+    </body>
+</html>
