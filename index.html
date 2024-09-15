@@ -13,7 +13,8 @@
 </head>
 <body>
     <h1>Cade Ross</h1>
-    <p id="blurb">I design, build, and market digital experiences with joy. I have been blessed to partner with wonderful companies to design delightful digital experiences. Some are shown below.</p>
+    <p id="blurb">I design, build, and market digital experiences with joy. I have been blessed to partner with wonderful companies. Some are shown below.</p>
+    
     <nav class="nav-panel">
         <ul>
             <li><a href="#work" class="nav-item" data-index="0">Work</a></li>
@@ -50,8 +51,10 @@
                 <img src="/images/icons/audible-color.svg" class="hover-svg" alt="Project 1 Hover">
             </a> -->
             <a href="/clarity.html" class="project project-link" data-color="#8998DC">
-                <img src="/images/icons/clarity.svg" class="default-svg" alt="Project 1">
+                <div class="icon-wrapper">
+                    <img src="/images/icons/clarity.svg" class="default-svg" alt="Project 1">
                 <img src="/images/icons/clarity-color.svg" class="hover-svg" alt="Project 1 Hover">
+                </div>
             </a>
             <a href="/zircon.html" class="project project-link" data-color="#68176a">
                 <img src="/images/icons/zircon.svg" class="default-svg" alt="Project 1">
@@ -61,8 +64,62 @@
     </div>
 
     <div id="album-art" class="content-section">
-        <h2>Album Art Content</h2>
-        <!-- Add your album art content here -->
+        <div class="projects album-art-grid">
+            <div class="album-art-item">
+                <div class="album-image-container">
+                    <img src="/images/art1.png" alt="Album 1">
+                </div>
+                <div class="album-info">
+                    <h3 class="album-title">Stargirl</h3>
+                    <p class="album-artist">Lana Del Rey</p>
+                </div>
+            </div>
+            <div class="album-art-item">
+                <div class="album-image-container">
+                    <img src="/images/art2.png" alt="Album 1">
+                </div>
+                <div class="album-info">
+                    <h3 class="album-title">Fighting Demons</h3>
+                    <p class="album-artist">Juice WRLD</p>
+                </div>
+            </div>
+            <div class="album-art-item">
+                <div class="album-image-container">
+                    <img src="/images/art3.png" alt="Album 1">
+                </div>
+                <div class="album-info">
+                    <h3 class="album-title">SWEET</h3>
+                    <p class="album-artist">Olivia Rodrigo</p>
+                </div>
+            </div>
+            <div class="album-art-item">
+                <div class="album-image-container">
+                    <img src="/images/art4.png" alt="Album 1">
+                </div>
+                <div class="album-info">
+                    <h3 class="album-title">Certified Lover Boy</h3>
+                    <p class="album-artist">Drake</p>
+                </div>
+            </div>
+            <div class="album-art-item">
+                <div class="album-image-container">
+                    <img src="/images/art5.png" alt="Album 1">
+                </div>
+                <div class="album-info">
+                    <h3 class="album-title">SMITHEREENS</h3>
+                    <p class="album-artist">Joji</p>
+                </div>
+            </div>
+            <div class="album-art-item">
+                <div class="album-image-container">
+                    <img src="/images/art6.png" alt="Album 1">
+                </div>
+                <div class="album-info">
+                    <h3 class="album-title">BITTER</h3>
+                    <p class="album-artist">Olivia Rodrigo</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="writing" class="content-section">
@@ -76,7 +133,7 @@
     </div>
 
     <p class="footer">Crafted with <i>love</i> in the United States</p>
-    <p class="stack">Vanilla CSS + HTML + JS</p>
+    <p class="stack">Vanilla HTML + CSS + JS</p>
     <div class="links">
         <div class="contact">
             <a href="https://x.com/cadeccr" class="icon">
@@ -115,6 +172,10 @@
             const navRect = document.querySelector('.nav-panel').getBoundingClientRect();
             selected.style.left = `${rect.left - navRect.left}px`;
             selected.style.width = `${rect.width}px`;
+
+            // Remove 'active' class from all items and add it to the selected item
+            navItems.forEach(navItem => navItem.classList.remove('active'));
+            item.classList.add('active');
         }
 
         function showContent(id) {
@@ -132,7 +193,7 @@
             });
         });
 
-        // Initialize the selected line and content
+        // Initialize the selected line, content, and active class
         updateSelected(navItems[0]);
         showContent('#work');
     </script>
