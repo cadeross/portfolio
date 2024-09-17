@@ -533,3 +533,10 @@ margin: 30px 0;
         aspect-ratio: 1 / 1;
     }
 }
+
+
+.header-divider {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.32);
+    margin: 20px 0; /* Adjust as needed */
+}
