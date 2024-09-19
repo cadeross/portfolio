@@ -585,3 +585,32 @@ margin: 30px 0;
     width: 100%;
 }
 
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+.project .default-svg.wiggle-animation,
+.project .hover-svg.wiggle-animation {
+    transition: transform 0.3s ease;
+}
+
+.project:hover .default-svg.wiggle-animation,
+.project:hover .hover-svg.wiggle-animation {
+    animation: wiggle 0.5s ease-in-out;
+}
+
+.project .default-svg.wiggle-animation,
+.project .hover-svg.wiggle-animation {
+    transform: none; /* Reset transform to prevent enlargement */
+}
