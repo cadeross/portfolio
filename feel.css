@@ -540,3 +540,17 @@ margin: 30px 0;
     background-color: rgba(0, 0, 0, 0.32);
     margin: 20px 0; /* Adjust as needed */
 }
+
+
+#about-me {
+    text-align: left;
+}
+
+#about-me p {
+    margin-bottom: 1em; /* Adjust the value as needed for more or less space */
+    text-align: left;
+}
+
+#about-text {
+    margin-top: 24px;
+}
