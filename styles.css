@@ -46,14 +46,8 @@ h1 {
 }
 
 .work p span {
-    margin: 0.70em;
+    margin: 0.55em;
     /* Increase spacing between elements and dots */
-}
-
-.work p::after {
-    content: " \00B7 ";
-    color: #D5D5D5;
-    /* Change dot color */
 }
 
 .interface-review {
@@ -64,11 +58,10 @@ h1 {
 
 h2 {
     font-size: 1.3em;
-    margin-bottom: 0.5em;
+    margin-bottom: -0.3em;
     font-family: Baskervville;
     font-style: normal;
     font-weight: 300;
-    line-height: normal;
 }
 
 p {
@@ -82,14 +75,28 @@ p {
 a {
     color: #00000075;
     text-decoration: underline;
+    text-decoration-color: #D5D5D580;
+    text-underline-offset: 0.28em;
+    /* Increase space from the text */
     font-family: 'Inter', sans-serif;
     font-weight: 100;
     font-size: 12pt;
+    text-decoration-thickness: 1px;
+    /* Make underline 1px in weight */
+    transition: text-decoration-color 0.55s ease;
+    /* Add transition effect */
+}
+
+a:hover {
+    text-decoration-color: #000000;
+    /* Change underline color on hover */
 }
 
 .icons {
     display: flex;
     justify-content: center;
+    align-items: center;
+    /* Center vertically */
     gap: 1em;
     margin-top: 3.5em;
 }
@@ -99,11 +106,16 @@ a {
     height: 30px;
 }
 
-.icons img[alt="Icon 1"],
-.icons img[alt="Icon 2"] {
-    width: 27px;
+.icons img[alt="Icon 1"] {
+    width: 27.5px;
     /* Shrink the x and blue sky logos */
-    height: 27px;
+    height: 27.5px;
+}
+
+.icons img[alt="Icon 2"] {
+    width: 24px;
+    /* Shrink the x and blue sky logos */
+    height: 24px;
 }
 
 .newsletter-logo {
@@ -111,4 +123,86 @@ a {
     height: 36px;
     margin-bottom: -1.2em;
     /* Bring the logo even closer to the heading */
+}
+
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 20px;
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
+}
+
+.gallery::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar */
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    scroll-snap-align: center;
+    flex: 0 0 auto;
+    max-width: 100%;
+    max-height: 80vh;
+    transition: transform 0.3s ease;
+    /* Smooth transition */
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+}
+
+.minimap {
+    display: flex;
+    overflow-x: auto;
+    gap: 5px;
+    max-width: 1200px;
+    margin: 10px 20px;
+}
+
+.minimap img {
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.minimap img:hover,
+.minimap img.active {
+    opacity: 1;
+    border: 1px solid #00000015;
+}
+
+.header .back,
+.header .title,
+.header .view-detail {
+    font-size: 12pt;
+    color: #00000075;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    text-decoration: underline;
+    text-decoration-color: #D5D5D580;
+    text-underline-offset: 0.28em;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 0.55s ease;
+}
+
+.header .back {
+    cursor: pointer;
+}
+
+.header .view-detail {
+    cursor: pointer;
+}
+
+.header .back:hover,
+.header .view-detail:hover {
+    text-decoration-color: #000000;
 }
