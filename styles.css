@@ -1,0 +1,114 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fff;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+    /* Remove margin */
+    color: #000;
+    font-family: Baskervville;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #00000075;
+    margin-top: 0.01em;
+    /* Add small margin to top */
+    margin-bottom: 2em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    font-size: 12pt;
+}
+
+.work,
+.interface-review {
+    margin-bottom: 2em;
+}
+
+.work p {
+    margin-bottom: 1em;
+    /* Increase spacing between elements */
+}
+
+.work p span {
+    margin: 0.70em;
+    /* Increase spacing between elements and dots */
+}
+
+.work p::after {
+    content: " \00B7 ";
+    color: #D5D5D5;
+    /* Change dot color */
+}
+
+.interface-review {
+    max-width: 300px;
+    margin: 0 auto;
+    /* Center the section */
+}
+
+h2 {
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+    font-family: Baskervville;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+p {
+    font-size: 12pt;
+    color: #00000075;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+}
+
+a {
+    color: #00000075;
+    text-decoration: underline;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    font-size: 12pt;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 3.5em;
+}
+
+.icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.icons img[alt="Icon 1"],
+.icons img[alt="Icon 2"] {
+    width: 27px;
+    /* Shrink the x and blue sky logos */
+    height: 27px;
+}
+
+.newsletter-logo {
+    width: 36px;
+    height: 36px;
+    margin-bottom: -1.2em;
+    /* Bring the logo even closer to the heading */
+}
