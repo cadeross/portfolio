@@ -12,6 +12,7 @@ body {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
+    margin-top: -80px; /* Moves full page upwards */
 }
 
 h1 {
@@ -106,13 +107,13 @@ a:hover {
     height: 30px;
 }
 
-.icons img[alt="Icon 1"] {
-    width: 27.5px;
+.icons img[alt="LinkedIn"] {
+    width: 26.5px;
     /* Shrink the x and blue sky logos */
-    height: 27.5px;
+    height: 26.5px;
 }
 
-.icons img[alt="Icon 2"] {
+.icons img[alt="X"] {
     width: 24px;
     /* Shrink the x and blue sky logos */
     height: 24px;
@@ -205,4 +206,42 @@ a:hover {
 .header .back:hover,
 .header .view-detail:hover {
     text-decoration-color: #000000;
+}
+
+.status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 8px;
+    width: 100%;
+    font-size: 10pt;
+    color: #00000075;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+}
+
+.status-text {
+    max-width: 300px;
+    text-align: center;
+}
+
+.blinking-dot {
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: blink 2.5s infinite;
+    margin-bottom: 8px
+}
+
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
 }
