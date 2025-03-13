@@ -1,0 +1,265 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: -80px;
+    /* Moves full page upwards */
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+    /* Remove margin */
+    color: #000;
+    font-family: Baskervville;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #00000075;
+    margin-top: 0.01em;
+    /* Add small margin to top */
+    margin-bottom: 2em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    font-size: 12pt;
+}
+
+.work,
+.interface-review {
+    margin-bottom: 2em;
+}
+
+.work p {
+    margin-bottom: 1em;
+    /* Increase spacing between elements */
+}
+
+.work p span {
+    margin: 0.55em;
+    /* Increase spacing between elements and dots */
+}
+
+.interface-review {
+    max-width: 300px;
+    margin: 0 auto;
+    /* Center the section */
+}
+
+h2 {
+    font-size: 1.3em;
+    margin-bottom: -0.3em;
+    font-family: Baskervville;
+    font-style: normal;
+    font-weight: 300;
+}
+
+p {
+    font-size: 12pt;
+    color: #00000075;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+}
+
+a {
+    color: #00000075;
+    text-decoration: underline;
+    text-decoration-color: #D5D5D580;
+    text-underline-offset: 0.28em;
+    /* Increase space from the text */
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    font-size: 12pt;
+    text-decoration-thickness: 1px;
+    /* Make underline 1px in weight */
+    transition: text-decoration-color 0.55s ease;
+    /* Add transition effect */
+}
+
+a:hover {
+    text-decoration-color: #000000;
+    /* Change underline color on hover */
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Center vertically */
+    gap: 1em;
+    margin-top: 3.5em;
+}
+
+.icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.icons img[alt="LinkedIn"] {
+    width: 26.5px;
+    /* Shrink the x and blue sky logos */
+    height: 26.5px;
+}
+
+.icons img[alt="X"] {
+    width: 24px;
+    /* Shrink the x and blue sky logos */
+    height: 24px;
+}
+
+.newsletter-logo {
+    width: 36px;
+    height: 36px;
+    margin-bottom: -1.2em;
+    /* Bring the logo even closer to the heading */
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    gap: 10px;
+    height: 100vh;
+    margin: 0;
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
+}
+
+.gallery::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar */
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    display: block;
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    transition: transform 0.3s ease;
+    /* Smooth transition */
+    object-fit: contain;
+}
+
+.minimap {
+    display: flex;
+    overflow-x: auto;
+    gap: 5px;
+    max-width: 1200px;
+    margin: 10px 20px;
+}
+
+.minimap img {
+    width: auto;
+    height: 80px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.minimap img:hover,
+.minimap img.active {
+    opacity: 1;
+    border: 1px solid #00000015;
+}
+
+.header .title {
+    font-size: 12pt;
+    color: #00000075;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+}
+
+.header .back,
+.header .view-detail {
+    font-size: 12pt;
+    color: #00000075;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    text-decoration: underline;
+    text-decoration-color: #D5D5D580;
+    text-underline-offset: 0.28em;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 0.55s ease;
+}
+
+.header .back {
+    cursor: pointer;
+}
+
+.header .view-detail {
+    cursor: pointer;
+}
+
+.header .back:hover,
+.header .view-detail:hover {
+    text-decoration-color: #000000;
+}
+
+.status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 8px;
+    width: 100%;
+    font-size: 10pt;
+    color: #00000075;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+}
+
+.status-text {
+    max-width: 300px;
+    text-align: center;
+}
+
+.blinking-dot {
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: blink 2.5s infinite;
+    margin-bottom: 8px
+}
+
+@keyframes blink {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
