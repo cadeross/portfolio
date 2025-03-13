@@ -4,10 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notion Calendar Gallery</title>
+    <title>Notion Calendar by Cade Ross</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Inline critical CSS for faster loading */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #fff;
+            overflow: hidden;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             display: flex;
@@ -17,6 +26,7 @@
             height: 100vh;
             margin: 0;
             background-color: #fff;
+            overflow: hidden;
         }
 
         .header {
@@ -26,6 +36,7 @@
             align-items: center;
             padding: 10px 20px;
             box-sizing: border-box;
+            position: relative;
         }
 
         .header .back,
@@ -56,11 +67,12 @@
 
         .gallery {
             display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
+            flex-direction: column;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
             gap: 10px;
-            max-width: 1200px;
-            margin: 20px;
+            height: 100vh;
+            margin: 0;
             scroll-behavior: smooth;
             /* Smooth scrolling */
         }
@@ -73,53 +85,24 @@
         .gallery img {
             width: 100%;
             height: auto;
+            max-height: 100vh;
             display: block;
-            scroll-snap-align: center;
+            scroll-snap-align: start;
             flex: 0 0 auto;
-            max-width: 100%;
-            max-height: 100%;
             transition: transform 0.3s ease;
             /* Smooth transition */
+            object-fit: contain;
         }
 
-        .gallery img:hover {
+        /* Remove the hover effect */
+        /* .gallery img:hover {
             transform: scale(1.01);
             /* Slightly enlarge on hover */
-        }
-
-        .minimap {
-            display: flex;
-            overflow-x: auto;
-            gap: 5px;
-            max-width: 1200px;
-            margin: 10px 20px;
-        }
-
-        .minimap img {
-            width: 80px;
-            height: auto;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: opacity 0.3s ease, border 0.3s ease;
-        }
-
-        .minimap img:hover,
-        .minimap img.active {
-            opacity: 1;
-            border: 1px solid #00000010;
-        }
+        /* } */
     </style>
 </head>
 
 <body>
-    <div class="header">
-        <div class="back" onclick="window.history.back()">
-            Back
-        </div>
-        <div class="view-detail">
-            <a href="https://interfacereview.substack.com" target="_blank">Read more</a>
-        </div>
-    </div>
     <div class="gallery" id="gallery">
         <img src="images/notion-calendar/notion-calendar-1.png" alt="Gallery Image 1">
         <img src="images/notion-calendar/notion-calendar-6.png" alt="Gallery Image 2">
@@ -128,48 +111,36 @@
         <img src="images/notion-calendar/notion-calendar-12.png" alt="Gallery Image 5">
         <!-- Add more images as needed -->
     </div>
-    <div class="minimap">
-        <img src="images/notion-calendar/notion-calendar-1.png" alt="Gallery Image 1" onclick="scrollToImage(0)">
-        <img src="images/notion-calendar/notion-calendar-6.png" alt="Gallery Image 2" onclick="scrollToImage(1)">
-        <img src="images/notion-calendar/notion-calendar-8.png" alt="Gallery Image 3" onclick="scrollToImage(2)">
-        <img src="images/notion-calendar/notion-calendar-11.png" alt="Gallery Image 4" onclick="scrollToImage(3)">
-        <img src="images/notion-calendar/notion-calendar-12.png" alt="Gallery Image 5" onclick="scrollToImage(4)">
-        <!-- Add more images as needed -->
-    </div>
     <script>
         function scrollToImage(index) {
             const gallery = document.querySelector('.gallery');
             const images = gallery.querySelectorAll('img');
-            const minimapImages = document.querySelectorAll('.minimap img');
-            images[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
-            minimapImages.forEach(img => img.classList.remove('active'));
-            minimapImages[index].classList.add('active');
+            images[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         function updateMinimap() {
             const gallery = document.querySelector('.gallery');
             const images = gallery.querySelectorAll('img');
-            const minimapImages = document.querySelectorAll('.minimap img');
             let closestIndex = 0;
             let closestDistance = Infinity;
 
             images.forEach((img, index) => {
                 const rect = img.getBoundingClientRect();
-                const distance = Math.abs(rect.left - window.innerWidth / 2);
+                const distance = Math.abs(rect.top - window.innerHeight / 2);
                 if (distance < closestDistance) {
                     closestDistance = distance;
                     closestIndex = index;
                 }
             });
-
-            minimapImages.forEach(img => img.classList.remove('active'));
-            minimapImages[closestIndex].classList.add('active');
         }
 
         document.querySelector('.gallery').addEventListener('scroll', updateMinimap);
 
-        // Set the first image as active by default
-        document.querySelector('.minimap img').classList.add('active');
+        // Set the first image as active by default and center it on load
+        window.addEventListener('load', () => {
+            const firstImage = document.querySelector('.gallery img');
+            firstImage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
     </script>
 </body>
 

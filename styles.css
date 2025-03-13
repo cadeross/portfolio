@@ -1,3 +1,12 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -6,13 +15,15 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #fff;
+    overflow: hidden;
 }
 
 .container {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
-    margin-top: -80px; /* Moves full page upwards */
+    margin-top: -80px;
+    /* Moves full page upwards */
 }
 
 h1 {
@@ -128,11 +139,12 @@ a:hover {
 
 .gallery {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    flex-direction: column;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
     gap: 10px;
-    max-width: 1200px;
-    margin: 20px;
+    height: 100vh;
+    margin: 0;
     scroll-behavior: smooth;
     /* Smooth scrolling */
 }
@@ -145,18 +157,13 @@ a:hover {
 .gallery img {
     width: 100%;
     height: auto;
+    max-height: 100vh;
     display: block;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     flex: 0 0 auto;
-    max-width: 100%;
-    max-height: 80vh;
     transition: transform 0.3s ease;
     /* Smooth transition */
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-    /* Slightly enlarge on hover */
+    object-fit: contain;
 }
 
 .minimap {
@@ -168,8 +175,8 @@ a:hover {
 }
 
 .minimap img {
-    width: 80px;
-    height: auto;
+    width: auto;
+    height: 80px;
     cursor: pointer;
     opacity: 0.7;
     transition: opacity 0.3s ease;
@@ -181,8 +188,14 @@ a:hover {
     border: 1px solid #00000015;
 }
 
+.header .title {
+    font-size: 12pt;
+    color: #00000075;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+}
+
 .header .back,
-.header .title,
 .header .view-detail {
     font-size: 12pt;
     color: #00000075;
@@ -238,10 +251,15 @@ a:hover {
 }
 
 @keyframes blink {
-    0%, 50%, 100% {
+
+    0%,
+    50%,
+    100% {
         opacity: 1;
     }
-    25%, 75% {
+
+    25%,
+    75% {
         opacity: 0;
     }
 }
