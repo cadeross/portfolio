@@ -227,7 +227,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: 8px;
+    bottom: 16px;
     width: 100%;
     font-size: 10pt;
     color: #00000075;
